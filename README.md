@@ -3,8 +3,8 @@ Text summarization method inspired by audio thumbnailing. It uses the repetitive
 
 
 ## Running the models
-- download the [topic model using non-negative matrix factorization](LINK_HERE)
-- see usage example in [Notebook](LINK_HERE)
+- Download the [topic model using non-negative matrix factorization](LINK_HERE)
+- See usage example in [Notebook](LINK_HERE)
 
 
 ### Citation
