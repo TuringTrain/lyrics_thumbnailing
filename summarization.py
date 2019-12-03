@@ -1,12 +1,12 @@
 import summa
 from scipy.stats import wasserstein_distance, hmean
 from sklearn.cluster import DBSCAN
-from sklearn.externals import joblib
+import joblib
 import listtools
 from lyrics_reader import get_sentences, text_from, get_tree_segments_lines_token
 import numpy as np
 import warnings
-from ssm_structure import string_similarity, self_similarity_matrix
+from utils import string_similarity, self_similarity_matrix
 
 ############################
 ##### TEXTRANK SUMMARY #####
@@ -55,8 +55,8 @@ def display_topic(model, feature_names, no_top_words, topic_idx):
 
 def topicrank_summary(lyric_lines, summary_length):
     warnings.filterwarnings('ignore')
-    tfidf_vectorizer, _ = joblib.load('models/tfidf_mpd.jl')
-    nmf_model, _ = joblib.load('models/nmf_mpd.jl')
+    tfidf_vectorizer, _ = joblib.load('nmf_topic_model/tfidf_mpd.jl')
+    nmf_model, _ = joblib.load('nmf_topic_model/nmf_mpd.jl')
 
     lyric_lines = listtools.make_strict(lyric_lines)
     lyric_str = get_sentences(lyric_lines)
@@ -245,8 +245,8 @@ def normalized_ranks(elems_scores, higherScoreIsBetter):
 
 def textrank_topicrank_summary(raw_lyric, summary_length):
     warnings.filterwarnings('ignore')
-    tfidf_vectorizer, _ = joblib.load('models/tfidf_mpd.jl')
-    nmf_model, _ = joblib.load('models/nmf_mpd.jl')
+    tfidf_vectorizer, _ = joblib.load('nmf_topic_model/tfidf_mpd.jl')
+    nmf_model, _ = joblib.load('nmf_topic_model/nmf_mpd.jl')
 
     tree, segments, lyric_lines, token = get_tree_segments_lines_token(raw_lyric)
     lyric_lines_strict = listtools.make_strict(lyric_lines)
@@ -307,8 +307,8 @@ def textrank_topicrank_summary(raw_lyric, summary_length):
 
 def textrank_topicrank_fitness_summary(raw_lyric, summary_length):
     warnings.filterwarnings('ignore')
-    tfidf_vectorizer, _ = joblib.load('models/tfidf_mpd.jl')
-    nmf_model, _ = joblib.load('models/nmf_mpd.jl')
+    tfidf_vectorizer, _ = joblib.load('nmf_topic_model/tfidf_mpd.jl')
+    nmf_model, _ = joblib.load('nmf_topic_model/nmf_mpd.jl')
 
     tree, segments, lyric_lines, token = get_tree_segments_lines_token(raw_lyric)
     lyric_lines_strict = listtools.make_strict(lyric_lines)
