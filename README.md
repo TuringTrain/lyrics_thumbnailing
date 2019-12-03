@@ -8,4 +8,6 @@ Text summarization method inspired by audio thumbnailing. It uses the repetitive
 
 
 ### Citation
-Fell, Michael, et al. "Song Lyrics Summarization Inspired by Audio Thumbnailing." 2019.
+```
+Michael Fell, Elena Cabrio, Michele Corazza, Fabien Gandon. Song Lyrics Summarization Inspired by Audio Thumbnailing. In Proceedings of the Conference on Recent Advances in Natural Language Processing (RANLP '19), Varna, Bulgaria. pp.338-344.
+```
